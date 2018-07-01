@@ -23,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user taps the button */
     public void sendMessage(View view) {
         // Do something in response to button
-
-
-
-
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
@@ -36,8 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user taps the check log button */
     public void checkLog(View view) {
-
         Intent intent = new Intent(this, LogFileActivity.class);
+        startActivity(intent);
+    }
+
+    /** Launch Camera Activity (Called when user taps the log camera button */
+    public void launchCamera(View view) {
+        Intent intent = new Intent(this, Camera2Activity.class);
         startActivity(intent);
     }
 
