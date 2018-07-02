@@ -82,7 +82,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:text="@string/placeholder_button1"
+        android:text="@string/toggle_gyro_logging"
         app:layout_constraintBaseline_toBaselineOf="@+id/toggleButton5"
         app:layout_constraintEnd_toStartOf="@+id/toggleButton5"
         app:layout_constraintHorizontal_bias="0.0"
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:text="@string/placeholder_button2"
+        android:text="@string/toggle_gps_logging"
         app:layout_constraintBaseline_toBaselineOf="@+id/toggleButton4"
         app:layout_constraintEnd_toStartOf="@+id/toggleButton4"
         app:layout_constraintStart_toStartOf="parent" />

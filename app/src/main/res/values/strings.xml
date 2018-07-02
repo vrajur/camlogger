@@ -6,6 +6,6 @@
     <string name="camera_button">Log Camera Data</string>
     <string name="toggle_accel_logging">Toggle Accelerometer Logging</string>
     <string name="toggle_cam_logging">Toggle Camera Recording</string>
-    <string name="placeholder_button1">Toggle [Placeholder] Logging</string>
-    <string name="placeholder_button2">Toggle [Placeholder] Logging</string>
+    <string name="toggle_gyro_logging">Toggle Gyroscope Logging</string>
+    <string name="toggle_gps_logging">Toggle GPS Logging</string>
 </resources>

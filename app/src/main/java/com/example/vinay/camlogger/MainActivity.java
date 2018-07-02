@@ -18,6 +18,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Check all Permisssions:
+        if (!PermissionsChecker.checkStoragePermissions(this)) {
+            PermissionsChecker.requestStoragePermissions(this);
+        }
+        if (!PermissionsChecker.checkLocationPermissions(this)) {
+            PermissionsChecker.requestLocationPermissions(this);
+        }
     }
 
     /** Called when the user taps the button */

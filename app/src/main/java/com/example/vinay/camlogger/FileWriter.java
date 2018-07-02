@@ -60,8 +60,8 @@ public class FileWriter {
 
         // Get Permissions:
         Log.d("createFile", "Checking File Permissions");
-        if (!checkStoragePermissions(activity)) {
-            requestStoragePermissions(activity);
+        if (!PermissionsChecker.checkStoragePermissions(activity)) {
+            PermissionsChecker.requestStoragePermissions(activity);
             Log.d("createFile", "Permissions Requested");
         }
 
@@ -79,49 +79,6 @@ public class FileWriter {
         }
         File file = new File(path, fileName);
         return file;
-    }
-
-    // Storage Permissions
-    public static final int REQUEST_EXTERNAL_STORAGE = 1;
-    public static String[] PERMISSIONS_STORAGE = {
-//            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-    };
-
-    // Check Storage Permissions:
-    public static boolean checkStoragePermissions(Activity activity) {
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        return permission == PackageManager.PERMISSION_GRANTED;
-    }
-
-    // Request Storage Permissions:
-    public static void requestStoragePermissions(Activity activity) {
-        // We don't have permission so prompt the user
-        ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
-    }
-
-//    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case FileWriter.REQUEST_EXTERNAL_STORAGE: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-                    Log.d("MSG", "Write Permission has been granted!");
-
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                    Log.d("MSG", "Write Permission has not been granted");
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request.
-        }
     }
 
 }
